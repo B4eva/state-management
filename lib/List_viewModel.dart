@@ -42,7 +42,17 @@ Widget _myListView(BuildContext context) {
         contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
         selected: false,
         onLongPress: () {},
-      )
-    ],
+      ),
+       ListTile(
+        title: Text("Wednesday"),
+        subtitle: Text("Fouth day of the week"),
+        leading:
+            CircleAvatar(backgroundImage: AssetImage('assets/bright.jpeg')),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
+        selected: false,
+        onLongPress: () {},
+        ) ],
   ).toList());
 }
