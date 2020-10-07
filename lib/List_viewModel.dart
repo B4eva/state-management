@@ -8,51 +8,48 @@ class BodyLayout extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-  return ListView(
-      children: ListTile.divideTiles(
-    context: context,
-    tiles: [
-      ListTile(
-        title: Text("Bright"),
-        subtitle: Text("A young Engineer"),
-        leading:
-            CircleAvatar(backgroundImage: AssetImage('assets/bright.jpeg')),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        dense: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
-        onLongPress: () {},
-      ),
-      ListTile(
-        title: Text("monday"),
-        subtitle: Text("Second  day of the week"),
-        leading:
-            CircleAvatar(backgroundImage: AssetImage('assets/bright.jpeg')),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        dense: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
-        onLongPress: () {},
-      ),
-      ListTile(
-        title: Text("Tuesday"),
-        subtitle: Text("Third day of the week"),
-        leading:
-            CircleAvatar(backgroundImage: AssetImage('assets/bright.jpeg')),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        dense: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
-        selected: false,
-        onLongPress: () {},
-      ),
-       ListTile(
-        title: Text("Wednesday"),
-        subtitle: Text("Fouth day of the week"),
-        leading:
-            CircleAvatar(backgroundImage: AssetImage('assets/bright.jpeg')),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        dense: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 2.0),
-        selected: false,
-        onLongPress: () {},
-        ) ],
-  ).toList());
-}
+  final String text = "Country";
+  final europeanCountries = [
+    'Albania',
+    'Andorra',
+    'Armenia',
+    'Austria',
+    'Azerbaijan',
+    'Belarus',
+    'Belgium',
+    'Bosnia and Herzegovina',
+    'Bulgaria'];
+
+
+
+    final icons = [Icons.directions_bike, Icons.directions_boat,
+      Icons.directions_bus, Icons.directions_car, Icons.directions_railway,
+      Icons.directions_run, Icons.directions_subway, Icons.directions_transit,
+      Icons.directions_walk];
+
+     return ListView.separated(
+       itemCount: europeanCountries.length,
+       itemBuilder: (context, index){
+         return Card(
+             child: ListTile(
+               leading: Icon(icons[index]),
+               title: Text(europeanCountries[index]),
+               subtitle: Text('A Europeam country'),
+                  onTap: (){
+                       print(text);
+                  },
+              ), 
+              ) ;
+              },
+            
+              separatorBuilder: (context, index){
+          return Divider();
+        }, 
+         
+      );
+      
+       }
+     
+     
+  
+
